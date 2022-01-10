@@ -69,6 +69,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{github.repository}}.wiki
           path: wiki
+          ref: main
 
       - name: Build stack
         run: |
