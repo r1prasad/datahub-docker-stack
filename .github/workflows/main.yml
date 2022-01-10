@@ -2,7 +2,9 @@ name: Docker
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - raghav-dev
     paths:
       - "images/**"
       - "model/**"
