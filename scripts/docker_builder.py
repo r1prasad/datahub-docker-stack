@@ -203,7 +203,8 @@ class DockerStackBuilder:
 
 
 def run_build(stack_dir, dry_run):
-    images_changed = read_var('IMAGES_CHANGED')
+    # images_changed = read_var('IMAGES_CHANGED')
+    images_changed = get_changed_images()
     print('changed images are', images_changed)
     git_suffix = read_var('GIT_HASH_SHORT')
     builder = DockerStackBuilder(

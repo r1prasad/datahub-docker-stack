@@ -2,9 +2,7 @@ name: Docker
 
 on:
   push:
-    branches:
-      - main
-      - raghav-dev
+    branches: [ raghav-dev ]
     paths:
       - "images/**"
       - "model/**"
@@ -66,10 +64,8 @@ jobs:
       - name: Clone Wiki
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{github.repository}}.wiki
           path: wiki
-          ref: main
 
       - name: Build stack
         run: |
@@ -105,7 +101,6 @@ jobs:
           )
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
           commit_message: "[ci skip] Automated publish for ${{github.sha}}"
           repository: wiki/
 

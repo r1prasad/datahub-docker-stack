@@ -4,7 +4,7 @@ FROM ucsdets/datahub-base-notebook:$BASE_TAG
 USER jovyan
 
 RUN pip install dpkt \
-                nose \
+                # nose \
                 datascience && \
     python -c 'import matplotlib.pyplot' && \
     fix-permissions $CONDA_DIR && \
